@@ -6,3 +6,12 @@
   width: 100%;
   box-sizing: border-box;
 }
+.resetbutton {
+  margin: 10px;
+}
+.resetbutton button {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 16px;
+  border: none;
+  color: #ffffff;
+}
