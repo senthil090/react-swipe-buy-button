@@ -1,0 +1,106 @@
+.react-swipe-button {
+  background: transparent;
+  width: 100%;
+  padding: 0px 10px;
+  box-sizing: border-box;
+  user-select: none;
+}
+.react-swipe-button-track {
+  width: 100%;
+  position: relative;
+  background-color: #4185f4;
+  color: #ffffff;
+  border-radius: 50px;
+  box-sizing: content-box;
+  border: 2px solid transparent;
+  padding: 5px 0px;
+  overflow: hidden;
+}
+.react-swipe-button-thumb {
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  background-color: #ffffff;
+  border: 3px solid transparent;
+  transform: translateY(-50%);
+}
+
+.react-swipe-button-thumb::before {
+  content: "";
+  width: 30%;
+  display: inline-block;
+  height: 30%;
+  transform: translate(50%, -50%) rotate(127deg);
+  top: 50%;
+  left: 0;
+  position: absolute;
+  border-top: 5px solid #4185f4;
+  border-left: 5px solid #4185f4;
+}
+
+@keyframes react-swipe-wave {
+  0% {
+    background-position: -50%;
+  }
+  50% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: -50%;
+  }
+}
+.react-swipe-button-info {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  white-space: nowrap;
+}
+
+.react-swipe-info-animation {
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    #ffffff 50%,
+    transparent 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+  animation: react-swipe-wave 5s infinite;
+}
+
+.react-swipe-completed .react-swipe-button-track {
+  background-color: transparent;
+}
+
+@keyframes react-swipe-load {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.react-swipe-completed .react-swipe-button-thumb {
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+  box-shadow: 0.5px 0.5px 2px rgb(163 168 176 / 62%);
+  border: 5px solid rgb(128 128 128 / 10%);
+  animation: react-swipe-load 2s infinite linear;
+}
+
+.react-swipe-completed .react-swipe-button-thumb::before {
+  border-top: 5px solid #4185f4;
+  border-left: 5px solid #4185f4;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  transform: none;
+  top: 0;
+  left: 0;
+}
